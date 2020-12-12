@@ -129,7 +129,7 @@ void YetAnotherMagicLampEffect::reconfigure(ReconfigureFlags flags)
     m_gridResolution = YetAnotherMagicLampConfig::gridResolution();
 }
 
-void YetAnotherMagicLampEffect::prePaintScreen(KWin::ScreenPrePaintData& data, int time)
+void YetAnotherMagicLampEffect::prePaintScreen(KWin::ScreenPrePaintData& data, std::chrono::milliseconds time)
 {
     const std::chrono::milliseconds delta(time);
 
@@ -158,7 +158,7 @@ void YetAnotherMagicLampEffect::postPaintScreen()
     KWin::effects->postPaintScreen();
 }
 
-void YetAnotherMagicLampEffect::prePaintWindow(KWin::EffectWindow* w, KWin::WindowPrePaintData& data, int time)
+void YetAnotherMagicLampEffect::prePaintWindow(KWin::EffectWindow* w, KWin::WindowPrePaintData& data, std::chrono::milliseconds time)
 {
     auto modelIt = m_models.constFind(w);
     if (modelIt != m_models.constEnd()) {

@@ -36,10 +36,10 @@ public:
 
     void reconfigure(ReconfigureFlags flags) override;
 
-    void prePaintScreen(KWin::ScreenPrePaintData& data, int time) override;
+    void prePaintScreen(KWin::ScreenPrePaintData& data, std::chrono::milliseconds time) override;
     void postPaintScreen() override;
 
-    void prePaintWindow(KWin::EffectWindow* w, KWin::WindowPrePaintData& data, int time) override;
+    void prePaintWindow(KWin::EffectWindow* w, KWin::WindowPrePaintData& data, std::chrono::milliseconds time) override;
 
 #if KWIN_EFFECT_API_VERSION <= KWIN_EFFECT_API_MAKE_VERSION(0, 228)
     void drawWindow(KWin::EffectWindow* w, int mask, QRegion region, KWin::WindowPaintData& data) override;
